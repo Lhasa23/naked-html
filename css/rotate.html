@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太极轮回</title>
+  <style>
+    body {
+      background-color: #eee;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    @keyframes x {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #taiji-wapper {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #taiji {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      animation: x 8s infinite linear;
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    }
+
+    @media (max-width: 500px) {
+      #taiji {
+        width: 200px;
+        height: 200px;
+      }
+
+      #taiji-name {
+        margin-top: 1em;
+        font-size: 18px;
+      }
+    }
+
+    #taiji>div:nth-child(1) {
+      /* border: ; */
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      background-color: black;
+      left: 0;
+    }
+
+    #taiji>div:nth-child(2) {
+      /* border: 1px solid black; */
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      background-color: white;
+      right: 0;
+    }
+
+    #taiji>div:nth-child(3) {
+      border-radius: 50%;
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      background-color: black;
+      left: 25%;
+    }
+
+    #taiji>div:nth-child(4) {
+      border-radius: 50%;
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      background-color: white;
+      left: 25%;
+      bottom: 0;
+    }
+
+    #taiji>div:nth-child(5) {
+      border-radius: 50%;
+      width: 12%;
+      height: 12%;
+      position: absolute;
+      background-color: white;
+      left: 45%;
+      top: 20%;
+    }
+
+    #taiji>div:nth-child(6) {
+      border-radius: 50%;
+      width: 12%;
+      height: 12%;
+      position: absolute;
+      background-color: black;
+      left: 45%;
+      bottom: 20%;
+    }
+
+    #taiji-name {
+      margin-top: 1em;
+      font-size: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="taiji-wapper">
+    <div id="taiji">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="taiji-name">道可道，非常道</div>
+  </div>
+
+</body>
+
+</html>
