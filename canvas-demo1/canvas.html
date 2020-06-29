@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        let canvas = document.getElementById('canvas')
+
+        canvas.width = document.documentElement.clientWidth
+        canvas.height = document.documentElement.clientHeight
+
+        let ctx = canvas.getContext('2d')
+
+        ctx.fillStyle = 'black'
+        ctx.lineWidth = '4'
+        ctx.lineCap = 'round'
+
+        let last
+
+        function drawLine(x1, y1, x2, y2) {
+            ctx.beginPath()
+            ctx.moveTo(x1, y1)
+            ctx.lineTo(x2, y2)
+            ctx.stroke()
+        }
+        let painting = false
+
+        var isTouchSupport = 'ontouchstart' in document.documentElement
+        if (isTouchSupport) {
+            canvas.ontouchstart = (e) => {
+                last = [e.touches[0].clientX, e.touches[0].clientY]
+            }
+            canvas.ontouchmove = (e) => {
+                e.preventDefault()
+                drawLine(last[0], last[1], e.touches[0].clientX, e.touches[0].clientY)
+                last = [e.touches[0].clientX, e.touches[0].clientY]
+            }
+        } else {
+            canvas.onmousedown = (e) => {
+                painting = true
+                last = [e.clientX, e.clientY]
+            }
+            canvas.onmouseup = (e) => {
+                painting = false
+            }
+
+            canvas.onmousemove = (e) => {
+                if (painting) {
+                    drawLine(last[0], last[1], e.clientX, e.clientY)
+                    last = [e.clientX, e.clientY]
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
