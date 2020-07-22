@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太极轮回</title>
+</head>
+
+<body>
+    <style>
+        body {
+            width: 100%;
+            background-color: #eaeaea;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        #content-wrapper {
+            max-height: 100vh;
+            max-width: 100vw;
+            display: flex;
+            justify-content: space-around;
+        }
+        #content {
+            overflow: auto;
+        }
+    </style>
+    <style id="style">
+        /*#taiji-name {
+            margin-top: 1em;
+            font-size: 25px;
+        }*/
+    </style>
+    <style>
+        @media (max-width: 500px) {
+            #taiji {
+                width: 200px;
+                height: 200px;
+            }
+
+            /*#taiji-name {
+                  margin-top: 1em;
+                  font-size: 18px;
+              }*/
+        }
+    </style>
+    <div id="content-wrapper">
+        <div id="content"></div>
+        <div id="taiji-wapper">
+            <div id="taiji">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+<!--            <div id="taiji-name">道可道，非常道</div>-->
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
